@@ -23,3 +23,8 @@ plt.xticks([w*7*24 for w in range(10)],['week %i' %w for w in range(10)])
 plt.autoscale(tight=True)
 plt.grid()
 plt.show()
+
+"""
+- ノイズが含まれたデータに対して、その背後にある本当のモデルを見つける
+- そのモデルを用いて、予測を立てる
+"""
