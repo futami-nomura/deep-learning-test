@@ -51,5 +51,10 @@ print(error(f1,x,y)) # どれくらい外れているかを算出している
 fx = sp.linspace(0,x[-1], 1000) # プロット用に"x値"を生成
 plt.plot(fx,f1(fx),linewidth=4)
 plt.legend(["d=%i" % f1.order], loc="upper left")
+f2p = sp.polyfit(x, y, 2)
+print(f2p)
+f2 = sp.poly1d(f2p)
+plt.plot(fx,f2(fx),linewidth=4)
+plt.legend(["d=%i" % f2.order], loc="upper left")
 plt.grid()
 plt.show()
