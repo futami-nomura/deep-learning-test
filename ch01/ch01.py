@@ -58,3 +58,20 @@ plt.plot(fx,f2(fx),linewidth=4)
 plt.legend(["d=%i" % f2.order], loc="upper left")
 plt.grid()
 plt.show()
+
+
+"""
+変化点を元に計算する
+inflection = 3.5 * 7 * 24 # 変化点（急に変化する点の時間を計算
+xa = x[:inflection] # 変化前のデータポイント
+ya = y[:inflection]
+xb = x[inflection:] # 変化後のデータポイント
+yb = y[inflection:]
+
+fa = sp.poly1d(sp.ployfit(xa,ya,1))
+fb = sp.poly1d(sp.polyfit(xb,yb,1))
+
+fa_error = error(fa, xa, ya)
+fb_error = error(fb, xb, yb)
+print("Error inflection=%f" % (fa_error + fb_error))
+"""
